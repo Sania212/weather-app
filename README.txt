@@ -8,4 +8,4 @@
 
 ## Run SpecRunner.html to run jasmine test specs in the desired browser
 
-
+## Click on the Cº button to convert into Fº
