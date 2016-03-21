@@ -75,7 +75,7 @@ var
     
     $('.weather-now').html(htmlStr);
   }
-  /*Min and Max weather days forecast*/
+  /*Min and Max temprature weather days forecast*/
   function processForecastWeatherData(data) {
     var date = new Date(), minTemp, maxTemp, htmlStr = "";
 
