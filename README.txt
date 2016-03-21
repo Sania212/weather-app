@@ -2,7 +2,7 @@
 
 ## A local weather application show five days weather forecast through users IP address
 
-## testing with jasmine
+## Jasmine as a testing framework with Jasmine jquery plugin
 
 ## Run index.html for the weather application in the desired browser
 
