@@ -1,6 +1,5 @@
 
 
-
 describe("Weather Application", function() {
   it("successfully convert celsius into fahrenheit", function() {
     // setup
@@ -12,6 +11,7 @@ describe("Weather Application", function() {
     // verify
     expect(Math.round(result)).toEqual(50);
   });
+  
 
   it("successfully convert celsius into fahrenheit when celsius is zero", function() {
     // setup
@@ -23,6 +23,7 @@ describe("Weather Application", function() {
     // verify
     expect(Math.round(result)).toEqual(32);
   });
+  
 
   it("returns the proper day of the week abbreviation of Wednesday", function() {
     // setup
@@ -37,8 +38,6 @@ describe("Weather Application", function() {
   });
   
 
-  
-
   it("does not return the wrong day of the week abbreviation of Saturday", function() {
     // setup
     var knownDate = new Date(2015, 2, 11);
@@ -50,6 +49,8 @@ describe("Weather Application", function() {
     // verify
     expect(result).not.toBe('Sat')
   });
+  
+  
   
    it("does not return the wrong day of the week abbreviation", function() {
     // setup
@@ -64,8 +65,6 @@ describe("Weather Application", function() {
   });
   
 
-  
- 
   it("successfully convert Fahrenheit into celsuis", function() {
     // setup
     var celsiusValue = 20;
@@ -89,9 +88,8 @@ describe("Weather Application", function() {
     // verify
     expect(result).toContain('us');
    expect(result).toContain('&APPID=0045c13635745b634c15955d56547ef3');
-   
-        
-  });  
+    });  
+  
   
   it("retrieves correct minimum temperature of the current location", function() {
     // setup
@@ -107,25 +105,29 @@ describe("Weather Application", function() {
     expect(result).toContain('&units=metric');
 
 	});
+	
 
+ it("should successfully retrieve the data of 5 days weather forecast of the current location ", function() { 
+  // setup
+   var   forecastWeatherData='http://api.openweathermap.org/data/2.5/weather?';
+ // action
+   var result= getFinalURL('http://api.openweathermap.org/data/2.5/weather?');
+ // verify
+    expect(result).toContain(forecastWeatherData);
+    });
+	
 
 it("retrieves correct maximun temperature of the current location", function() {
     // setup
     var baseURL = 'http://api.openweathermap.org/data/2.5/weather?';
     var maxTemp = '10';
-
-
-    // action
+ // action
     var result = getFinalURL(baseURL, maxTemp);
-
-    // verify
+  // verify
     expect(result).toContain('q=10');
-
     expect(result).toContain('&units=metric');
-
 	});
 	
-
 
   it("gets a proper full URL using city name without callback", function() {
     // setup
@@ -148,10 +150,9 @@ it("retrieves correct maximun temperature of the current location", function() {
   });  
  	it("Sections contains the css class", function() {
  	  // setup
-	var elem;
+	var result;
 	beforeEach(function() {
 		elem = $ ('<div id="section"><a id="units">C</a></div>');
-
   // verify
 		expect(elem).toBe("#section");
 		expect(elem).toContain('units');
@@ -161,15 +162,6 @@ it("retrieves correct maximun temperature of the current location", function() {
 
 
     
-    
-    
 
-    
-    
-    
-    
-    
-    
-
-
+  
   
