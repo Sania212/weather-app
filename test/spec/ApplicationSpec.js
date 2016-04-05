@@ -246,7 +246,7 @@ it("retrieves correct maximun temperature of the current location", function() {
  		setUpHTMLFixture();
     });
     
-    it("should result in todays temprature to Exist in Weather app", function() {
+    it("should result in todays temperature to Exist in Weather app", function() {
     //no action
     	
     // verify
