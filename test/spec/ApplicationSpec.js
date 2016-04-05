@@ -120,6 +120,7 @@ describe("Weather Application", function() {
     expect(result).toContain(forecastWeatherData);
     });
 	
+	
 
 it("retrieves correct maximun temperature of the current location", function() {
     // setup
@@ -136,8 +137,6 @@ it("retrieves correct maximun temperature of the current location", function() {
 
 	});
 	
-
-
 
 
   it("gets a proper full URL using city name without callback", function() {
@@ -159,11 +158,10 @@ it("retrieves correct maximun temperature of the current location", function() {
   });      
 
 
-
  
- describe("Css TESTS", function() { 
-it("should have the correct font", function() {
-//setup
+  describe("Css TESTS", function() { 
+  it("should have the correct font", function() {
+  //setup
       var fontFace = '"Arial", sans-serif'; 
       
  //action
@@ -173,18 +171,18 @@ it("should have the correct font", function() {
  //verify
    
       expect(result).toHaveCss();
-  
-         
+      
   });  
   });      
 
 
 
 
-//Fixture setup for (Tests for Unit button visibility on app)
+  describe("Tests for Unit button visibility on app", function() {
+  //Fixture setup 
 
-function setUpHTMLFixture() {
-        jasmine.getFixtures().set('   <div class="weather-details hidden">       \
+    function setUpHTMLFixture() {
+     jasmine.getFixtures().set('   <div class="weather-details hidden">       \
                                     <section class="weather-head">\
                                     <h3></h3>                                           \
                                     <a id="units">C</a>           \
@@ -193,33 +191,30 @@ function setUpHTMLFixture() {
                                     <br>                             \
                                     <div class="weather-forecast"> </div> </div>   \
                                 ');
-}
-
-
-describe("Tests for Unit button visibility on app", function() {
+  }
      beforeEach(function() {
  		setUpHTMLFixture();
     });
-
     it("should result in Units being visible", function() {
     	// no action
     	
     	// verify
-        expect($("#units")).toBeVisible();
+        expect($("#units")).toBeVisible();       
     });
     
    it("should result units to have correct abbreviation ", function() {
-   	// no action
+   		// no action
    		
-   	// verify
-    	expect($( "#units" )).toHaveText("C");
+   		// verify
+    	expect($( "#units" )).toHaveText("C");  
+    	
     });   
-});    
+    });    
+   
+   
+   
         
-  
-  
-        
-describe("A Click event has been called ", function() {
+ describe("A Click event has been called ", function() {
   var click;
 
   beforeEach(function() {
@@ -228,14 +223,45 @@ describe("A Click event has been called ", function() {
 
   it("tracks that the spy was called", function() {
   	// action
-  	    click(".click");
+  	 click(".click");
 		
 	// verify
-    	expect(click).toHaveBeenCalled();
+ expect(click).toHaveBeenCalled();	
+ 
+  });
   });
 
 
-});
+ 
+
+ describe("Today's Temperature", function() {
+   //setup
+    function setUpHTMLFixture() {
+        jasmine.getFixtures().set('<p class="temperature" id="degree-today">\
+        <span class="">-1.9°</span>\
+  <span class="hidden">28.6°</span></p> \
+                                ');
+    }
+     beforeEach(function() {
+ 		setUpHTMLFixture();
+    });
+    
+    it("should result in todays temprature to Exist in Weather app", function() {
+    //no action
+    	
+    // verify
+    expect($("#degree-today")).toExist();
+    });    
+
+    it("should result in todays temperature being visible on weather app", function() {
+    	//no action
+    	
+    	// verify
+        expect($("#degree-today")).toBeVisible();
+     });    
+     }); 
+
+
 
 
 
