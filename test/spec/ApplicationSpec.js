@@ -215,18 +215,18 @@ it("retrieves correct maximun temperature of the current location", function() {
    
         
  describe("A Click event has been called ", function() {
-  var click;
-
+          //setup
+  var result;
   beforeEach(function() {
-    click = jasmine.createSpy('.click');
+    result = jasmine.createSpy('.click');
   });
 
   it("tracks that the spy was called", function() {
   	// action
-  	 click(".click");
+  	 result(".click");
 		
 	// verify
- expect(click).toHaveBeenCalled();	
+ expect(spy).toHaveBeenCalled();	
  
   });
   });
